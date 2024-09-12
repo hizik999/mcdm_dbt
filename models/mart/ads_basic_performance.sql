@@ -1,0 +1,1 @@
+select * from {{ ref('mcdm_with_metrics') }}

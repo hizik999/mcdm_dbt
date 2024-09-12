@@ -1,0 +1,11 @@
+version: 2
+
+sources: 
+  - name: ads
+    database: dbt-test-435309
+    schema: dbt_amalyshev
+    tables:
+      - name: source_ads_twitter
+      - name: source_ads_tiktok
+      - name: source_ads_facebook
+      - name: source_ads_bing

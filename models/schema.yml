@@ -1,0 +1,514 @@
+version: 2
+
+models:
+  - name: ads_bing
+    description: "Model that processes Bing ads data and calculates key metrics."
+    columns:
+      - name: ad_id
+        description: "Unique identifier for the ad."
+        tests:
+          - not_null
+
+      - name: add_to_cart
+        description: "Number of 'add to cart' actions, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: adset_id
+        description: "Identifier for the ad set."
+        tests:
+          - not_null
+
+      - name: campaign_id
+        description: "Unique identifier for the campaign."
+        tests:
+          - not_null
+
+      - name: channel
+        description: "Marketing channel through which the ad was shown."
+        tests:
+          - not_null
+
+      - name: clicks
+        description: "Number of times the ad was clicked."
+        tests:
+          - not_null
+
+      - name: comments
+        description: "Number of comments, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: creative_id
+        description: "Creative identifier, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: date
+        description: "Date of the ad impression."
+        tests:
+          - not_null
+
+      - name: engagements
+        description: "Calculated number of engagements (clicks + conv + imps + revenue)."
+        tests:
+          - not_null
+
+      - name: impressions
+        description: "Number of times the ad was shown."
+        tests:
+          - not_null
+
+      - name: installs
+        description: "Number of installs, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: likes
+        description: "Number of likes, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: link_clicks
+        description: "Number of link clicks, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: placement_id
+        description: "Placement ID, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: post_click_conversions
+        description: "Number of post-click conversions, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: post_view_conversions
+        description: "Number of post-view conversions, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: posts
+        description: "Number of posts, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: purchase
+        description: "Number of purchases, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: registrations
+        description: "Number of registrations, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: revenue
+        description: "Revenue generated from the ad."
+        tests:
+          - not_null
+
+      - name: shares
+        description: "Number of shares, set to 0 for Bing."
+        tests:
+          - not_null
+
+      - name: spend
+        description: "Total spend for the ad."
+        tests:
+          - not_null
+
+      - name: conversions
+        description: "Number of conversions for the ad."
+        tests:
+          - not_null
+
+      - name: video_views
+        description: "Number of video views, set to 0 for Bing."
+        tests:
+          - not_null
+
+  - name: ads_facebook
+    description: "Model that processes Facebook ads data and calculates key metrics."
+    columns:
+      - name: ad_id
+        description: "Unique identifier for the ad."
+        tests:
+          - not_null
+
+      - name: add_to_cart
+        description: "Number of 'add to cart' actions performed by users."
+        tests:
+          - not_null
+
+      - name: adset_id
+        description: "Identifier for the ad set."
+        tests:
+          - not_null
+
+      - name: campaign_id
+        description: "Unique identifier for the campaign."
+        tests:
+          - not_null
+
+      - name: channel
+        description: "Marketing channel through which the ad was shown."
+        tests:
+          - not_null
+
+      - name: clicks
+        description: "Number of times the ad was clicked."
+        tests:
+          - not_null
+
+      - name: comments
+        description: "Number of comments received for the ad."
+        tests:
+          - not_null
+
+      - name: creative_id
+        description: "Identifier for the creative used in the ad."
+        tests:
+          - not_null
+
+      - name: date
+        description: "Date of the ad impression."
+        tests:
+          - not_null
+
+      - name: engagements
+        description: "Calculated number of engagements (clicks + comments + likes + shares + views + purchase + complete_registration)."
+        tests:
+          - not_null
+
+      - name: impressions
+        description: "Number of times the ad was shown."
+        tests:
+          - not_null
+
+      - name: installs
+        description: "Number of installs, set to 0 for Facebook."
+        tests:
+          - not_null
+
+      - name: likes
+        description: "Number of likes received by the ad."
+        tests:
+          - not_null
+
+      - name: link_clicks
+        description: "Number of inline link clicks."
+        tests:
+          - not_null
+
+      - name: placement_id
+        description: "Placement ID, set to 0 for Facebook."
+        tests:
+          - not_null
+
+      - name: post_click_conversions
+        description: "Number of post-click conversions, set to 0 for Facebook."
+        tests:
+          - not_null
+
+      - name: post_view_conversions
+        description: "Number of post-view conversions, set to 0 for Facebook."
+        tests:
+          - not_null
+
+      - name: posts
+        description: "Number of posts, set to 0 for Facebook."
+        tests:
+          - not_null
+
+      - name: purchase
+        description: "Number of purchases made from the ad."
+        tests:
+          - not_null
+
+      - name: registrations
+        description: "Number of complete registrations from the ad."
+        tests:
+          - not_null
+
+      - name: revenue
+        description: "Revenue generated from purchases made through the ad."
+        tests:
+          - not_null
+
+      - name: shares
+        description: "Number of shares received for the ad."
+        tests:
+          - not_null
+
+      - name: spend
+        description: "Total spend for the ad."
+        tests:
+          - not_null
+
+      - name: conversions
+        description: "Number of conversions resulting from the ad."
+        tests:
+          - not_null
+
+      - name: video_views
+        description: "Number of video views for the ad."
+        tests:
+          - not_null
+
+  - name: ads_tiktok
+    description: "Model that processes TikTok ads data and calculates key metrics."
+    columns:
+      - name: ad_id
+        description: "Unique identifier for the ad."
+        tests:
+          - not_null
+
+      - name: add_to_cart
+        description: "Number of 'add to cart' actions, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: adset_id
+        description: "Identifier for the ad set, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: campaign_id
+        description: "Unique identifier for the campaign."
+        tests:
+          - not_null
+
+      - name: channel
+        description: "Marketing channel through which the ad was shown."
+        tests:
+          - not_null
+
+      - name: clicks
+        description: "Number of times the ad was clicked."
+        tests:
+          - not_null
+
+      - name: comments
+        description: "Number of comments, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: creative_id
+        description: "Creative identifier, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: date
+        description: "Date of the ad impression."
+        tests:
+          - not_null
+
+      - name: engagements
+        description: "Calculated number of engagements (clicks + add_to_cart + purchase + registrations + video_views)."
+        tests:
+          - not_null
+
+      - name: impressions
+        description: "Number of times the ad was shown."
+        tests:
+          - not_null
+
+      - name: installs
+        description: "Number of installs, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: likes
+        description: "Number of likes, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: link_clicks
+        description: "Number of link clicks, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: placement_id
+        description: "Placement ID, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: post_click_conversions
+        description: "Number of post-click conversions, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: post_view_conversions
+        description: "Number of post-view conversions, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: posts
+        description: "Number of posts, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: purchase
+        description: "Number of purchases made from the ad."
+        tests:
+          - not_null
+
+      - name: registrations
+        description: "Number of registrations from the ad."
+        tests:
+          - not_null
+
+      - name: revenue
+        description: "Revenue generated from purchases, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: shares
+        description: "Number of shares, set to 0 for TikTok."
+        tests:
+          - not_null
+
+      - name: spend
+        description: "Total spend for the ad."
+        tests:
+          - not_null
+
+      - name: conversions
+        description: "Number of conversions resulting from the ad."
+        tests:
+          - not_null
+
+      - name: video_views
+        description: "Number of video views for the ad."
+        tests:
+          - not_null
+
+  - name: ads_twitter
+    description: "Model that processes Twitter ads data and calculates key metrics."
+    columns:
+      - name: ad_id
+        description: "Ad identifier, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: add_to_cart
+        description: "Number of 'add to cart' actions, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: adset_id
+        description: "Ad set identifier, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: campaign_id
+        description: "Unique identifier for the campaign."
+        tests:
+          - not_null
+
+      - name: channel
+        description: "Marketing channel through which the ad was shown."
+        tests:
+          - not_null
+
+      - name: clicks
+        description: "Number of clicks on the ad."
+        tests:
+          - not_null
+
+      - name: comments
+        description: "Number of comments on the ad."
+        tests:
+          - not_null
+
+      - name: creative_id
+        description: "Creative identifier, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: date
+        description: "Date of the ad impression."
+        tests:
+          - not_null
+
+      - name: engagements
+        description: "Number of engagements (likes, retweets, comments, etc.)."
+        tests:
+          - not_null
+
+      - name: impressions
+        description: "Number of times the ad was shown."
+        tests:
+          - not_null
+
+      - name: installs
+        description: "Number of installs, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: likes
+        description: "Number of likes the ad received."
+        tests:
+          - not_null
+
+      - name: link_clicks
+        description: "Number of link clicks, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: placement_id
+        description: "Placement identifier, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: post_click_conversions
+        description: "Number of post-click conversions, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: post_view_conversions
+        description: "Number of post-view conversions, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: posts
+        description: "Number of posts, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: purchase
+        description: "Number of purchases, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: registrations
+        description: "Number of registrations, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: revenue
+        description: "Revenue generated from the ad, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: shares
+        description: "Number of shares, set to 0 for Twitter."
+        tests:
+          - not_null
+
+      - name: spend
+        description: "Total spend on the ad."
+        tests:
+          - not_null
+
+      - name: conversions
+        description: "Number of conversions, derived from engagements."
+        tests:
+          - not_null
+
+      - name: video_views
+        description: "Number of video views the ad received."
+        tests:
+          - not_null
